@@ -27,19 +27,17 @@ int compter(int*tab){
 void tableau(){
     int* nbrPrems=malloc(taille*sizeof (int));
     nbrPrems[0]=2;
-    int courant = 2;
+    int courant = 3;
     int index = 0;
     for(int i=1;i<taille;++i){
-        courant++;
-        if(estPrems(nbrPrems,courant,index)==1){
-            index++;
-            nbrPrems[index]=courant;
-        }
+        if(estPrems(nbrPrems,courant,index))
+            nbrPrems[index++]=courant;
+        courant+=2;
     }
     /*for(int i=0;i<30 && nbrPrems[i]!=0;++i){
         printf("%d ",nbrPrems[i]);
     }*/
-    printf("%d ",compter(nbrPrems));
+    printf("%d\n",compter(nbrPrems));
 }
 
 int main() {
